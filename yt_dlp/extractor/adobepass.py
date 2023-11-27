@@ -1357,7 +1357,7 @@ MSO_INFO = {
 
 class AdobePassIE(InfoExtractor):  # XXX: Conventionally, base classes should end with BaseIE/InfoExtractor
     _SERVICE_PROVIDER_TEMPLATE = 'https://sp.auth.adobe.com/adobe-services/%s'
-    _USER_AGENT = 'Mozilla/5.0 (X11; Linux i686; rv:47.0) Gecko/20100101 Firefox/47.0'
+    _USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
     _MVPD_CACHE = 'ap-mvpd'
 
     _DOWNLOADING_LOGIN_PAGE = 'Downloading Provider Login Page'
@@ -1427,8 +1427,8 @@ class AdobePassIE(InfoExtractor):  # XXX: Conventionally, base classes should en
             return redirect_url
 
         mvpd_headers = {
-            'ap_42': 'anonymous',
-            'ap_11': 'Linux i686',
+            'ap_42': 'Google Inc.',
+            'ap_11': 'MacIntel',
             'ap_z': self._USER_AGENT,
             'User-Agent': self._USER_AGENT,
         }
