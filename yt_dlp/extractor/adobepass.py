@@ -16,9 +16,9 @@ from ..utils import (
 )
 
 MSO_INFO = {
-    'Cookie': {
-    'name': 'COOKIE'
-},
+    'YouTubeTV': {
+        'name': 'YouTubeTV',
+    },
     'DTV': {
         'name': 'DIRECTV',
         'username_field': 'username',
@@ -1502,7 +1502,7 @@ class AdobePassIE(InfoExtractor):  # XXX: Conventionally, base classes should en
                         mvpd_confirm_page, urlh = mvpd_confirm_page_res
                         if '<button class="submit" value="Resume">Resume</button>' in mvpd_confirm_page:
                             post_form(mvpd_confirm_page_res, 'Confirming Login')
-                elif mso_id == 'Cookie':
+                elif mso_id == 'YouTubeTV':
                     pass
                 elif mso_id == 'Philo':
                     # Philo has very unique authentication method
