@@ -229,6 +229,7 @@ class GoIE(AdobePassIE):
 
         formats = []
         subtitles = {}
+        mso_id = self.get_param('ap_mso')
         for asset in video_data.get('assets', {}).get('asset', []):
             asset_url = asset.get('value')
             if not asset_url:
@@ -243,7 +244,7 @@ class GoIE(AdobePassIE):
                     'brand': brand,
                     'device': '001',
                 }
-                if video_data.get('accesslevel') == '1':
+                if video_data.get('accesslevel') == '1' and mso_id != 'YouTubeTV':
                     requestor_id = site_info.get('requestor_id', 'DisneyChannels')
                     resource = site_info.get('resource_id') or self._get_mvpd_resource(
                         requestor_id, title, video_id, None)
